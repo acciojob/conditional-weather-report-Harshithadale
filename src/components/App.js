@@ -1,11 +1,20 @@
+import React, {useEffect, useState } from 'react'
+import '../styles/App.css'
+import axios from 'axios'
 
-import React from "react";
-import './../styles/App.css';
-
-const App = () => {
+function App() {
+  const [WeatherDisplay,setWeatherDisplay ]= useState(true)
+  const staticWeatherInp = { temperature: 25, conditions: "Sunny" }
+  useEffect(()=>{
+    if(staticWeatherInp.temperature > 20){
+    setWeatherDisplay(false)
+      }
+    }
+      ,[])
   return (
     <div>
-        {/* Do not remove the main div */}
+        {WeatherDisplay ? <p style={{color:"blue"}}>{staticWeatherInp.temperature}</p> : <p style={{color:"red"}}>{staticWeatherInp.temperature}</p>}
+        <p>{staticWeatherInp.conditions}</p>
     </div>
   )
 }
