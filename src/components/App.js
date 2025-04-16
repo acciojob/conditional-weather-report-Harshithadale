@@ -20,7 +20,7 @@ function App() {
       ) : (
         <p>
           Temperature:{" "}
-           <span style={{ color: "red" }}> {staticWeatherInp.temperature}</span>
+           <span style={{ color: "red" }}>{staticWeatherInp.temperature}</span>
         </p>
       )}
       <p>Conditions: {staticWeatherInp.conditions}</p>
